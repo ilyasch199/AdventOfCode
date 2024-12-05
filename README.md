@@ -8,11 +8,6 @@ AdventOfCode is a yearly event featuring daily coding challenges, with new puzzl
 
 Each year, the AdventOfCode event releases a set of puzzles that test your problem-solving and programming skills. I will be posting my solutions for these puzzles here.
 
-## Puzzles
-
-To check out the puzzles, please visit the official AdventOfCode website:  
-[https://adventofcode.com/](https://adventofcode.com/)
-
 ## Repository Structure
 
 - **`inputs/`**: This directory contains the input data for each puzzle.
