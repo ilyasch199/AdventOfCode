@@ -12,4 +12,4 @@ Each year, the AdventOfCode event releases a set of puzzles that test your probl
 
 - **`2024/solutions/`**: This directory contains the solution scripts for each puzzle for the year 2024. Each script is named `{numberofday}.py` (e.g., `1.py` for Day 1, `2.py` for Day 2, etc.).
 
-- **`2025/solutions/`**: This directory contains the solution scripts for each puzzle for the year 2024. Each script is named `{numberofday}.py` (e.g., `1.py` for Day 1, `2.py` for Day 2, etc.).
+- **`2025/solutions/`**: This directory contains the solution scripts for each puzzle for the year 2025. Each script is named `{numberofday}.py` (e.g., `1.py` for Day 1, `2.py` for Day 2, etc.).
