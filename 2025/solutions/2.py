@@ -1,29 +1,42 @@
-with open('2025/inputs/1.txt') as f:
-    lines = [line.strip() for line in f]
+with open('2025/inputs/2.txt') as f:
+    line = f.read().strip()
 
-rotations = [line[0] for line in lines]
-numbers = [int(line[1:]) for line in lines]
-dial_point = 50
-zero_counter = 0
+parts = line.split(',')
+ranges_list = []
+for part in parts:
+    start_str, end_str = part.split('-')
+    ranges_list.append((int(start_str), int(end_str)))
 
-for rotation, number in zip(rotations, numbers):
-    if rotation == 'R':
-        offset = (100 - dial_point) % 100
-        first_k = offset if offset != 0 else 100
-    else:
-        offset = dial_point % 100
-        first_k = offset if offset != 0 else 100
+## PART 1
 
-    if number > 1 and first_k <= number - 1:
-        hits_mid = 1 + ((number - 1) - first_k) // 100
-        zero_counter += hits_mid
+count_inv_ids = 0
+for start, end in ranges_list:
+    for i in range(start, end):
+        s = str(i)
+        if len(s) % 2 == 0 :
+            mid = len(s) // 2
+            if s[:mid] == s[mid:]:
+                count_inv_ids += i
 
-    if rotation == 'R':
-        dial_point = (dial_point + number) % 100
-    else:
-        dial_point = (dial_point - number) % 100
+print("PART 1 : the sum of all the invalids IDs : ", count_inv_ids)
 
-    if dial_point == 0:
-        zero_counter += 1
+## PART 2
 
-print("password is", zero_counter)
+count_inv_ids = 0
+for start, end in ranges_list:
+    for i in range(start, end):
+        s = str(i)
+        l = len(s)
+
+        for j in range(2, l+1):
+            if l % j != 0:
+                continue
+            
+            block_len = l // j
+            block = s[:block_len]
+
+            if block * j == s:
+                count_inv_ids += i
+                break
+
+print("PART 2 : the sum of all the invalids IDs : ", count_inv_ids)
